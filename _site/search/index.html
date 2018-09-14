@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>VitaminDev</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/vitamin-dev/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/vitamin-dev/search/">
+  <link rel="alternate" type="application/rss+xml" title="VitaminDev" href="/vitamin-dev/feed.xml">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div id="navbar-container" class="container">
+      <!-- Menu Icon - Collapsed Menu -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar-menu-top" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- Menu Items -->
+      
+      
+      <div class="collapse navbar-collapse" id="navbar-menu-top">
+        <ul class="nav navbar-nav">
+          <li><a class="page-link" href="/vitamin-dev/">Home</a></li>
+          
+            
+              
+                
+                <li><a href="/vitamin-dev/about/">About</a></li>
+                
+            
+              
+                
+            
+              
+                
+            
+              
+                
+            
+              
+                
+            
+              
+                
+            
+          
+        </ul>
+      </div>
+      <div id="sb-search" class="sb-search">
+        <form action="/search/" method="get" autocomplete="off">
+          <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="query" id="search">
+          <input class="sb-search-submit" type="submit" value="">
+          <span class="sb-icon-search"></span>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Header Banner -->
+  <div class="jumbotron header-banner">
+    <div class="container">
+      <h1 class="code-icon"><i class="fa fa-code" aria-hidden="true"></i></h1>
+      <h1 class="site-title">VitaminDev</h1>
+      <p>code supplements for “healthy” development</p>
+    </div>
+  </div>
+</header>
+
+
+    <div id="main-container" class="container">
+      <div class="row">
+
+        <div class="col-md-9 main">
+          <div class="row">
+
+            <section id="content-top">
+  
+  <div class=" container-fluid">
+    <div class="latest-posts">
+      <span >What's New?&nbsp</span>
+      <a href="/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/">How to build Social Media Links for Jekyll</a>
+    </div>
+  </div>
+</section>
+
+              
+            <main id="content-main" class="page-content" aria-label="Content">
+              <div class="container-fluid">
+
+              <article class="post">
+
+  <div class="post-content">
+    <section id="search-list">
+
+<form action="/search/" method="get">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search" id="search-box" name="query">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit" value="Search">Submit</button>
+      </span>
+    </div>
+</form>
+
+<ul id="search-results"></ul>
+
+<script>
+  window.store = {
+    
+      "web-dev-jekyll-2017-07-01-social-media-links-jekyll": {
+        "title": "How to build Social Media Links for Jekyll",
+        "author": "",
+        "category": "",
+        "content": "I always try to avoid hard coding during software development as it is usually ineffective and risks being highly counterproductive. In this post I will show you how to integrate social links for your website using Jekyll in a simple yet effective way, while avoiding hard coding and following some basic software development principles.Starting SimpleIf we try to keep it as simple as possible we need to define a set of social media links by creating an unordered list using the &lt;ul&gt;&lt;/ul&gt; HTML tag. Inside that we add list items using &lt;li&gt;&lt;/li&gt; tag that will contain our link &lt;a&gt;&lt;/a&gt; tags.&lt;ul class=\"social-links\"&gt;  &lt;li&gt;&lt;a href=\"https://www.facebook.com/my-facebook-username\"&gt;Facebook&lt;/a&gt;&lt;/li&gt;  &lt;li&gt;&lt;a href=\"https://plus.google.com/my-gplus-username\"&gt;Google+&lt;/a&gt;&lt;/li&gt;  &lt;li&gt;&lt;a href=\"https://linkedin.com/in/my-linkedin-username\"&gt;linkedin&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;Yaml ConfigurationThe next step is to draw out the link and define it in a more parametric way. For that we need to define our variables for the links in the _config.yml file.facebook:     \"https://www.facebook.com/my-facebook-username\"google-plus:  \"https://plus.google.com/my-gplus-username\"linkedin:     \"https://linkedin.com/in/my-linkedin-username\"Inside our HTML code we will make use of the of liquid tags to automatically fetch the above variables. Notice that the variables created in the _config.yml site can be accessed through the site variable.&lt;ul class=\"social-links\"&gt;  {% if site.facebook %}    &lt;li&gt;&lt;a href=\"{{ site.facebook }}\"&gt;Facebook&lt;/a&gt;&lt;/li&gt;  {% endif %}  {% if site.google-plus %}    &lt;li&gt;&lt;a href=\"{{ site.google-plus }}\"&gt;Google+&lt;/a&gt;&lt;/li&gt;  {% endif %}  {% if site.linkedin %}    &lt;li&gt;&lt;a href=\"{{ site.linkedin }}\"&gt;Linkedin&lt;/a&gt;&lt;/li&gt;  {% endif %}&lt;/ul&gt;Don’t Repeat Yourself!While the links are now defined a proper place (configuration file), the HTML code definitely has room for improvement by following the DRY principle . Instead of defining each link separately, we could group them together and have the code dynamically read and create the link for us. That will allow easier modifications in the future, such as adding or removing a link.The first step is to group the variables in the _config.yml file.social_links:  facebook:     \"https://www.facebook.com/my-facebook-username\"  google-plus:  \"https://plus.google.com/my-gplus-username\"  linkedin:     \"https://linkedin.com/in/my-linkedin-username\"Using the above declaration each link is contained inside the social_links variable. We will use a for loop using liquid tags inside our HTML code to access each one of them.&lt;ul class=\"social-links\"&gt;  {% for social_link in site.social_links %}    {% if social_link[1] != \"\" %}      &lt;li&gt;&lt;a href=\"{{ social_link[1] }}\"&gt;{{ social_link[0] }}&lt;/a&gt;&lt;/li&gt;    {% endif %}  {% endfor %}&lt;/ul&gt;Notice that the social_links variable is similar to a dictionary. Each link is defined by a key-value pair. The key is accessed by social_link[0] and the value by social_link[1].Adding the Awesome FontsIf you need to add icons to your links instead of text, you could use of course the font icons provided by Font Awesome. Be sure to check them out, as their fonts are indeed awesome! Just include the link below in the webpage and you are ready to use the fonts.&lt;link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css\"&gt;In order to intergrate properly with the font-awesome libraries, I defined the social links key variables by using the same name as the font-awesome css classes. For example, the icon I wanted to use for facebook has the class fa-facebook, and so the key for this link is defined using the word after fa-.The final code is found below. All that left is to add CSS styling and you are done!&lt;ul class=\"social-links\"&gt;  {% for social_link in site.social_links %}    {% if social_link[1] != \"\" %}      &lt;li&gt;&lt;a href=\"{{ social_link[1] }}\" title=\"{{ social_link[0] }}\"&gt;        &lt;i class=\"fa fa-{{ social_link[0] }}\" aria-hidden=\"true\"&gt;&lt;/i&gt;      &lt;/a&gt;&lt;/li&gt;    {% endif %}  {% endfor %}&lt;/ul&gt;Any ideas?Of course there are numerous ways to implement the above scenario. This post examines an effective and simple way to tackle this case.Feel free to add your own ideas and thoughts in the comments section below!",
+        "url": "/web-dev/jekyll/2017/07/01/social-media-links-jekyll/"
+      }
+      ,
+    
+      "design-2017-05-14-avoid-deployment-crisis": {
+        "title": "How to avoid Deployment Crisis",
+        "author": "",
+        "category": "",
+        "content": "Let’s say we are in the middle of a project about adding a new water supply line to a house. For this project there two groups working, one installing the new pipes outside, and the other one adding a new facet inside the house. The project will be considered a success when the user opens the facet and clear fresh water flows from it. The project’s management team has decided that the two groups will be working in parallel and that all parts’ deployment will take place at the same time.What if the deployment fails?Imagine you are part of the ‘inside’ team (the one adding the facet inside the house) working on the design of the project within your scope. The project manager approaches you and demands that you have fallback actions available, in case the deployment of the other team fails and the management team decides to fallback with the project’s deployment. As a manager, you wouldn’t want your client to open the facet and see mud coming from it, would you?What would you do then to handle this crisis scenario? The backup option is not available in this case. Obviously removing every change done and restoring everything in their initial state would be cost- and time-consuming, probably leading the team working overtimes late at night. A simple and efficient solution would be of course to add a valve inside the house where you can turn off the new water supply, depending on the status of the ‘outside’ parts of the project, while leaving all the ‘inside’ parts ready to use after successfully deploying them.From Plumber to Software Engineer…Now let’s leave the plumbing systems to the plumbers and apply this case on an IT project. Again we have two separate delivery units working on a new functionality that needs to be added in the existing processes. To simplify things, your team handles the ‘inside’ systems, with which the users are working and the ‘outside’ team is responsible for the web services that draw data from the internet and provide them to the ‘inside’ part.Requirements  The process must work seamlessly and cannot be interrupted by system errors. System errors are not tolerated, as they lead to financial loss to the company itself.  If anything goes wrong during the deployment, then the user’s work should not be affected in any case while using the existing process. It should be like the new functionality was never added.Drawbacks  The deployment time window is very small and clearly not enough to handle rollback actions.  Having people working overtimes to rollback changes is to be avoided for many reasons (e.g. costs).  There is no system configuration options available to support you. There is only your code and database tables.To find out if the ‘valve’ option works for this case we must dive deeper into the design of the process and ask the following question:How the new functionality is introduced to the existing process?The integration pointIn the following diagram we have pinpointed the spot (A) where the new functionality is to be added.The necessary implementations include modifying an existing main program by introducing a new piece of code. The quick and dirty way would be to go with injecting the new code inside the existing program.What I would consider as a better practice, is to use a more modular approach like the following.In this case we add all the new functionality outside of the existing program in a separate module (another program or function module) adding in the existing program only the necessary call to this module. The spot that needs to be changed in the existing program in order to call our new functionality would be the integration point.Decision MakingNow that it is clear what the integration point is, it’s time to add a valve, meaning an on-off switch for the new functionality.We will define this switch in very simple way using a configuration table like the following:            Process ID      Process Name      Active                  01      New Process Description      X      Obviously the Active column of the configuration table defines whether the new functionality is to be executed or not.With the configuration ready, we need to decide where to add the query to the configuration table.One way would be to add the query inside the main program like so.With this approach we let the program do the decision making whether to call the new mechanism or not. This would suit a scenario where we would have multiple programs that need to call the new mechanism but only some of them would need to be affected by the configuration.In order to make the configuration affect the execution of the new mechanism globally, we would need to add the decision making inside the new module.Based on this design, the existing program is only able to call the new mechanism, and handle the return of results. If we proceed with this approach, we need to make the implementations in such a way where when the new process is found inactive, the existing program will continue its flow like normal.Turn off the switch in case of an emergency!To sum up, we defined a killer on-off switch for our new process. In the crisis scenario when the deployment of the other team goes wrong and the management decides to fallback, all we have to do is change the configuration table and deactivate the new process; just like using a valve under our sink in the bathroom!",
+        "url": "/design/2017/05/14/avoid-deployment-crisis/"
+      }
+      ,
+    
+      "general-2017-05-01-what-is-vitamindev": {
+        "title": "What is VitaminDev?",
+        "author": "",
+        "category": "",
+        "content": "First post and we need to break the ice. So, let’s start by introducing myself and this blog.My name is Ioannis Nikopoulos (my friends call me John and so should you) and I am an experienced Software Engineer with strong professional background in SAP custom development (ABAP language). Despite the language or the system I am working on, there are some principles I always follow and they are all about clean code. I believe in writing clean, well-organized and well-documented code that is simple enough, does what it should, solve the problem it is supposed to and is maintainable. Clean code is highly beneficial, especially in the corporate context where problems are easily escalated and need complex solutions. “Quick and dirty” code cannot align with complexity, while best practices and methodical approaches seem to be the winner.So, this is how VitaminDev was born. It is a blog that gathers and explains coding principles and best practices across different languages and technologies. Each post will be dedicated on solving a development, technical or programming problem by comparing alternative solutions (if any) and suggesting the best one I have found, with the appropriate documentation. Of course, it would be also great if you shared your thoughts with me and suggested your own solutions.Many of the “problems” I will be talking about come from my own experience, either from work or my personal developments. I am working on improving my personal and professional skills, and I would like to share my journey with you. I take online lessons, I build this blog (almost) from scratch, read technical books and do personal small or medium development projects. I am still gathering everything, but feel free to visit my courses page or my github profile to see what I am up to.Before you ask, if this blog is for you, let me tell you this. If you are also passionate about learning the best coding and development practices and how to apply them in your personal or work projects, stay tuned and even share your thoughts and questions. Join me in my exploration journey and let’s become together (even) better software engineers.  VitaminDev is our vitamin for healthy development!",
+        "url": "/general/2017/05/01/what-is-vitamindev/"
+      }
+      
+    
+  };
+</script>
+
+<script src="/assets/js/search/lunr.min.js"></script>
+<script src="/assets/js/search/search.js"></script>
+
+</section>
+
+  </div>
+
+</article>
+
+
+              </div>
+            </main>
+          </div>
+        </div>
+
+        <div class="col-md-3 aside">
+          <div class="row">
+            <aside id="sidebar">
+
+              <section id="sidebar-top">
+  <div class="container-fluid">
+    <ul class="social-links">
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://www.facebook.com/ioannis.nikopoulos.3" title="facebook" class="social-icon">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a></li>
+        
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://plus.google.com/u/0/106093693797217007178" title="google-plus" class="social-icon">
+          <i class="fa fa-google-plus" aria-hidden="true"></i>
+        </a></li>
+        
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://www.linkedin.com/in/ioannisnikopoulos/" title="linkedin" class="social-icon">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a></li>
+        
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://github.com/Ioannis-Nikop" title="github" class="social-icon">
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </a></li>
+        
+      
+      <li><a rel="nofollow" target="_blank" href="/vitamin-dev/feed.xml" title="rss" class="social-icon">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a><li>
+    </ul>
+  </div>
+</section>
+
+
+              <section id="sidebar-about" class="sidebar-widget">
+  <div class="container-fluid">
+    <h3>About Author</h3>
+    <div class="row">
+      <div class="col-xs-4 col-md-12">
+        <img src="/assets/img/vitamin-dev/author_profile_photo.png" class="img-responsive img-circle" alt="About author photo">
+      </div>
+      <div class="col-xs-8 col-md-12">
+        <h4>Ioannis Nikopoulos</h4>
+        <p>Software Engineer & Application Development Analyst, capable to deliver high quality applications on time and on budget.</p>
+        <a href="mailto:ioannis.nikop@gmail.com">ioannis.nikop@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+              <section id="sidebar-archive" class="sidebar-widget">
+  <div class="container-fluid">
+    <h3>Blog Archive</h3>
+    
+      
+        
+            
+            <h4>2017</h4>
+            <ul>
+            
+        
+        <li><a href="/web-dev/jekyll/2017/07/01/social-media-links-jekyll/"><span>July 1</span> - How to build Social Media Links for Jekyll</a></li>
+      
+    
+      
+        
+        <li><a href="/design/2017/05/14/avoid-deployment-crisis/"><span>May 14</span> - How to avoid Deployment Crisis</a></li>
+      
+    
+      
+        
+        <li><a href="/general/2017/05/01/what-is-vitamindev/"><span>May 1</span> - What is VitaminDev?</a></li>
+      </ul>
+    
+  </div>
+</section>
+
+
+            </aside>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <span class="copyright">
+          <a class="page-link" href="/vitamin-dev/">VitaminDev</a>
+          © 2017. All rights reserved.
+        </span>
+      </div>
+      <div class="col-sm-6 text-center">
+        <span class="disclaimer">Blog powered by <a href="https://jekyllrb.com/">Jekyll</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- jQuery -->
+<script src="/assets/js/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+<!-- Search UI -->
+<script src="/assets/js/search/uisearch.js"></script>
+<script src="/assets/js/search/classie.js"></script>
+<script>
+  new UISearch( document.getElementById( 'sb-search' ) );
+</script>
+<!-- Functions -->
+<script src="/assets/js/functions.js"></script>
+
+
+  </body>
+
+</html>

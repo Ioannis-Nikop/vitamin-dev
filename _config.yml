@@ -30,7 +30,7 @@ disqus:
   shortname: vitamindev
 
 # Images
-image-path: /assets/img
+image-path: /vitamin-dev/assets/img
 author-image: author_profile_photo.png
 about-me-image: about_me_photo.png
 

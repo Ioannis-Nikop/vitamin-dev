@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How to avoid Deployment Crisis</title>
+  <meta name="description" content="Let’s say we are in the middle of a project about adding a new water supply line to a house.">
+
+  <link rel="stylesheet" href="/vitamin-dev/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/vitamin-dev/design/2017/05/14/avoid-deployment-crisis/">
+  <link rel="alternate" type="application/rss+xml" title="VitaminDev" href="/vitamin-dev/feed.xml">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div id="navbar-container" class="container">
+      <!-- Menu Icon - Collapsed Menu -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar-menu-top" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- Menu Items -->
+      
+      
+      <div class="collapse navbar-collapse" id="navbar-menu-top">
+        <ul class="nav navbar-nav">
+          <li><a class="page-link" href="/vitamin-dev/">Home</a></li>
+          
+            
+              
+                
+                <li><a href="/vitamin-dev/about/">About</a></li>
+                
+            
+              
+                
+            
+              
+                
+            
+              
+                
+            
+              
+                
+            
+              
+                
+            
+          
+        </ul>
+      </div>
+      <div id="sb-search" class="sb-search">
+        <form action="/search/" method="get" autocomplete="off">
+          <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="query" id="search">
+          <input class="sb-search-submit" type="submit" value="">
+          <span class="sb-icon-search"></span>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Header Banner -->
+  <div class="jumbotron header-banner">
+    <div class="container">
+      <h1 class="code-icon"><i class="fa fa-code" aria-hidden="true"></i></h1>
+      <h1 class="site-title">VitaminDev</h1>
+      <p>code supplements for “healthy” development</p>
+    </div>
+  </div>
+</header>
+
+
+    <div id="main-container" class="container">
+      <div class="row">
+
+        <div class="col-md-9 main">
+          <div class="row">
+
+            <section id="content-top">
+  
+  <div class=" container-fluid">
+    <div class="latest-posts">
+      <span >What's New?&nbsp</span>
+      <a href="/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/">How to build Social Media Links for Jekyll</a>
+    </div>
+  </div>
+</section>
+
+              
+            <main id="content-main" class="page-content" aria-label="Content">
+              <div class="container-fluid">
+
+              <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h2 class="post-title" itemprop="name headline">How to avoid Deployment Crisis</h2>
+    <p class="post-meta">
+      <time datetime="2017-05-14T10:08:43+01:00" itemprop="datePublished">
+        
+        May 14, 2017
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <hr />
+
+<p><img src="/assets/img/2017-05-14-avoid-deployment-crisis/design.jpg" alt="design" class="img-responsive" /></p>
+
+<hr />
+
+<p>Let’s say we are in the middle of a project about adding a new water supply line to a house. For this project there two groups working, one installing the new pipes outside, and the other one adding a new facet inside the house. The project will be considered a success when the user opens the facet and clear fresh water flows from it. The project’s management team has decided that the two groups will be working in parallel and that all parts’ deployment will take place at the same time.</p>
+
+<hr />
+
+<h3 id="what-if-the-deployment-fails">What if the deployment fails?</h3>
+
+<p>Imagine you are part of the ‘inside’ team (the one adding the facet inside the house) working on the design of the project within your scope. The project manager approaches you and demands that you have fallback actions available, in case the deployment of the other team fails and the management team decides to fallback with the project’s deployment. As a manager, you wouldn’t want your client to open the facet and see mud coming from it, would you?</p>
+
+<p>What would you do then to handle this crisis scenario? The <em>backup</em> option is not available in this case. Obviously removing every change done and restoring everything in their initial state would be cost- and time-consuming, probably leading the team working overtimes late at night. A simple and efficient solution would be of course to add a valve inside the house where you can turn off the new water supply, depending on the status of the ‘outside’ parts of the project, while leaving all the ‘inside’ parts ready to use after successfully deploying them.</p>
+
+<hr />
+
+<h3 id="from-plumber-to-software-engineer">From Plumber to Software Engineer…</h3>
+
+<p>Now let’s leave the plumbing systems to the plumbers and apply this case on an IT project. Again we have two separate delivery units working on a new functionality that needs to be added in the existing processes. To simplify things, your team handles the ‘inside’ systems, with which the users are working and the ‘outside’ team is responsible for the web services that draw data from the internet and provide them to the ‘inside’ part.</p>
+
+<h4 id="requirements">Requirements</h4>
+
+<ul>
+  <li>The process must work seamlessly and cannot be interrupted by system errors. System errors are not tolerated, as they lead to financial loss to the company itself.</li>
+  <li>If anything goes wrong during the deployment, then the user’s work should not be affected in any case while using the existing process. It should be like the new functionality was never added.</li>
+</ul>
+
+<h4 id="drawbacks">Drawbacks</h4>
+
+<ul>
+  <li>The deployment time window is very small and clearly not enough to handle rollback actions.</li>
+  <li>Having people working overtimes to rollback changes is to be avoided for many reasons (e.g. costs).</li>
+  <li>There is no system configuration options available to support you. There is only your code and database tables.</li>
+</ul>
+
+<p>To find out if the ‘valve’ option works for this case we must dive deeper into the design of the process and ask the following question:
+<em>How the new functionality is introduced to the existing process?</em></p>
+
+<hr />
+
+<h3 id="the-integration-point">The integration point</h3>
+
+<p>In the following diagram we have pinpointed the spot (A) where the new functionality is to be added.</p>
+
+<p><img src="/assets/img/2017-05-14-avoid-deployment-crisis/diag-2.jpg" alt="diagram 2" class="img-responsive" /></p>
+
+<p>The necessary implementations include modifying an existing main program by introducing a new piece of code. The quick and dirty way would be to go with injecting the new code inside the existing program.</p>
+
+<p>What I would consider as a better practice, is to use a more modular approach like the following.</p>
+
+<p><img src="/assets/img/2017-05-14-avoid-deployment-crisis/diag-3.jpg" alt="diagram 3" class="img-responsive" /></p>
+
+<p>In this case we add all the new functionality outside of the existing program in a separate module (another program or function module) adding in the existing program only the necessary call to this module. The spot that needs to be changed in the existing program in order to call our new functionality would be the <strong>integration point</strong>.</p>
+
+<hr />
+
+<h4 id="decision-making">Decision Making</h4>
+
+<p>Now that it is clear what the integration point is, it’s time to add a <em>valve</em>, meaning an on-off switch for the new functionality.</p>
+
+<p>We will define this switch in very simple way using a configuration table like the following:</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Process ID</th>
+      <th>Process Name</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01</td>
+      <td>New Process Description</td>
+      <td>X</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Obviously the <em>Active</em> column of the configuration table defines whether the new functionality is to be executed or not.</p>
+
+<p>With the configuration ready, we need to decide where to add the query to the configuration table.</p>
+
+<p>One way would be to add the query inside the main program like so.</p>
+
+<p><img src="/assets/img/2017-05-14-avoid-deployment-crisis/diag-4.jpg" alt="diagram 4" class="img-responsive" /></p>
+
+<p>With this approach we let the program do the decision making whether to call the new mechanism or not. This would suit a scenario where we would have multiple programs that need to call the new mechanism but only some of them would need to be affected by the configuration.</p>
+
+<p>In order to make the configuration affect the execution of the new mechanism globally, we would need to add the decision making inside the new module.</p>
+
+<p><img src="/assets/img/2017-05-14-avoid-deployment-crisis/diag-5.jpg" alt="diagram 5" class="img-responsive" /></p>
+
+<p>Based on this design, the existing program is only able to call the new mechanism, and handle the return of results. If we proceed with this approach, we need to make the implementations in such a way where when the new process is found inactive, the existing program will continue its flow like normal.</p>
+
+<hr />
+
+<h3 id="turn-off-the-switch-in-case-of-an-emergency">Turn off the switch in case of an emergency!</h3>
+
+<p>To sum up, we defined a killer on-off switch for our new process. In the crisis scenario when the deployment of the other team goes wrong and the management decides to fallback, all we have to do is change the configuration table and deactivate the new process; just like using a valve under our sink in the bathroom!</p>
+
+<hr />
+
+  </div>
+
+  <div class="share-links">
+  <ul>
+    <li><a class="" href="https://facebook.com/sharer.php?u=http://localhost:4000/design/2017/05/14/avoid-deployment-crisis/" rel="nofollow" target="_blank" title="Share on Facebook">
+      <i class="fa fa-facebook" aria-hidden="true"></i>
+    </a></li>
+    <li><a class="" href="https://plus.google.com/share?url=http://localhost:4000/design/2017/05/14/avoid-deployment-crisis/" rel="nofollow" target="_blank" title="Share on Google+">
+      <i class="fa fa-google-plus" aria-hidden="true"></i>
+    </a></li>
+    <li><a class="" href="http://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/design/2017/05/14/avoid-deployment-crisis/&title=How to avoid Deployment Crisis" rel="nofollow" target="_blank" title="Share on Linkedin">
+      <i class="fa fa-linkedin" aria-hidden="true"></i>
+    </a></li>
+    <li><a class="" href="https://twitter.com/intent/tweet?text=How to avoid Deployment Crisis&url=http://localhost:4000/design/2017/05/14/avoid-deployment-crisis/" rel="nofollow" target="_blank" title="Share on Twitter">
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+    </a></li>
+    <li><a class="" href="http://www.reddit.com/submit?url=http://localhost:4000/design/2017/05/14/avoid-deployment-crisis/&title=How to avoid Deployment Crisis" rel="nofollow" target="_blank" title="Share on Reddit">
+      <i class="fa fa-reddit-alien" aria-hidden="true"></i>
+    </a></li>
+    <li><a class="" href="http://pinterest.com/pin/create/button/?url=http://localhost:4000/design/2017/05/14/avoid-deployment-crisis/&description=How to avoid Deployment Crisis" rel="nofollow" target="_blank" title="Share on Pinterest">
+      <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+    </a></li>
+    <li><a href="mailto:?subject=How to avoid Deployment Crisis&body=Hey! Please check this article out. It may be interesting for you. http://localhost:4000/design/2017/05/14/avoid-deployment-crisis/" target="_blank" title="Share by e-mail" >
+      <i class="fa fa-envelope" aria-hidden="true"></i>
+    </a></li>
+  </ul>
+</div>
+
+
+  
+    
+  <div id="disqus_thread"></div>
+  <script>
+  /*
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/vitamin-dev/design/2017/05/14/avoid-deployment-crisis/';
+      this.page.identifier = 'http://localhost:4000/vitamin-dev/design/2017/05/14/avoid-deployment-crisis/';
+    };
+*/
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://vitamindev.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+  
+</article>
+
+
+              </div>
+            </main>
+          </div>
+        </div>
+
+        <div class="col-md-3 aside">
+          <div class="row">
+            <aside id="sidebar">
+
+              <section id="sidebar-top">
+  <div class="container-fluid">
+    <ul class="social-links">
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://www.facebook.com/ioannis.nikopoulos.3" title="facebook" class="social-icon">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a></li>
+        
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://plus.google.com/u/0/106093693797217007178" title="google-plus" class="social-icon">
+          <i class="fa fa-google-plus" aria-hidden="true"></i>
+        </a></li>
+        
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://www.linkedin.com/in/ioannisnikopoulos/" title="linkedin" class="social-icon">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a></li>
+        
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://github.com/Ioannis-Nikop" title="github" class="social-icon">
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </a></li>
+        
+      
+      <li><a rel="nofollow" target="_blank" href="/vitamin-dev/feed.xml" title="rss" class="social-icon">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a><li>
+    </ul>
+  </div>
+</section>
+
+
+              <section id="sidebar-about" class="sidebar-widget">
+  <div class="container-fluid">
+    <h3>About Author</h3>
+    <div class="row">
+      <div class="col-xs-4 col-md-12">
+        <img src="/assets/img/vitamin-dev/author_profile_photo.png" class="img-responsive img-circle" alt="About author photo">
+      </div>
+      <div class="col-xs-8 col-md-12">
+        <h4>Ioannis Nikopoulos</h4>
+        <p>Software Engineer & Application Development Analyst, capable to deliver high quality applications on time and on budget.</p>
+        <a href="mailto:ioannis.nikop@gmail.com">ioannis.nikop@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+              <section id="sidebar-archive" class="sidebar-widget">
+  <div class="container-fluid">
+    <h3>Blog Archive</h3>
+    
+      
+        
+            
+            <h4>2017</h4>
+            <ul>
+            
+        
+        <li><a href="/web-dev/jekyll/2017/07/01/social-media-links-jekyll/"><span>July 1</span> - How to build Social Media Links for Jekyll</a></li>
+      
+    
+      
+        
+        <li><a href="/design/2017/05/14/avoid-deployment-crisis/"><span>May 14</span> - How to avoid Deployment Crisis</a></li>
+      
+    
+      
+        
+        <li><a href="/general/2017/05/01/what-is-vitamindev/"><span>May 1</span> - What is VitaminDev?</a></li>
+      </ul>
+    
+  </div>
+</section>
+
+
+            </aside>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <span class="copyright">
+          <a class="page-link" href="/vitamin-dev/">VitaminDev</a>
+          © 2017. All rights reserved.
+        </span>
+      </div>
+      <div class="col-sm-6 text-center">
+        <span class="disclaimer">Blog powered by <a href="https://jekyllrb.com/">Jekyll</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- jQuery -->
+<script src="/assets/js/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+<!-- Search UI -->
+<script src="/assets/js/search/uisearch.js"></script>
+<script src="/assets/js/search/classie.js"></script>
+<script>
+  new UISearch( document.getElementById( 'sb-search' ) );
+</script>
+<!-- Functions -->
+<script src="/assets/js/functions.js"></script>
+
+
+  </body>
+
+</html>

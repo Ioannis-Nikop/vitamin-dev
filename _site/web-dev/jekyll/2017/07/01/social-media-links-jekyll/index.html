@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How to build Social Media Links for Jekyll</title>
+  <meta name="description" content="In this post I will show you how to integrate social links using Jekyll in a simple yet effective way..">
+
+  <link rel="stylesheet" href="/vitamin-dev/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/">
+  <link rel="alternate" type="application/rss+xml" title="VitaminDev" href="/vitamin-dev/feed.xml">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div id="navbar-container" class="container">
+      <!-- Menu Icon - Collapsed Menu -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar-menu-top" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- Menu Items -->
+      
+      
+      <div class="collapse navbar-collapse" id="navbar-menu-top">
+        <ul class="nav navbar-nav">
+          <li><a class="page-link" href="/vitamin-dev/">Home</a></li>
+          
+            
+              
+                
+                <li><a href="/vitamin-dev/about/">About</a></li>
+                
+            
+              
+                
+            
+              
+                
+            
+              
+                
+            
+              
+                
+            
+              
+                
+            
+          
+        </ul>
+      </div>
+      <div id="sb-search" class="sb-search">
+        <form action="/search/" method="get" autocomplete="off">
+          <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="query" id="search">
+          <input class="sb-search-submit" type="submit" value="">
+          <span class="sb-icon-search"></span>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Header Banner -->
+  <div class="jumbotron header-banner">
+    <div class="container">
+      <h1 class="code-icon"><i class="fa fa-code" aria-hidden="true"></i></h1>
+      <h1 class="site-title">VitaminDev</h1>
+      <p>code supplements for “healthy” development</p>
+    </div>
+  </div>
+</header>
+
+
+    <div id="main-container" class="container">
+      <div class="row">
+
+        <div class="col-md-9 main">
+          <div class="row">
+
+            <section id="content-top">
+  
+  <div class=" container-fluid">
+    <div class="latest-posts">
+      <span >What's New?&nbsp</span>
+      <a href="/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/">How to build Social Media Links for Jekyll</a>
+    </div>
+  </div>
+</section>
+
+              
+            <main id="content-main" class="page-content" aria-label="Content">
+              <div class="container-fluid">
+
+              <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h2 class="post-title" itemprop="name headline">How to build Social Media Links for Jekyll</h2>
+    <p class="post-meta">
+      <time datetime="2017-07-01T10:00:00+01:00" itemprop="datePublished">
+        
+        Jul 1, 2017
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <hr />
+
+<p><img src="/assets/img/2017-07-01-social-media-links-jekyll/social-links.png" alt="social-links" class="img-responsive" /></p>
+
+<hr />
+
+<p>I always try to avoid hard coding during software development as it is usually ineffective and risks being highly counterproductive. In this post I will show you how to integrate social links for your website using Jekyll in a simple yet effective way, while avoiding hard coding and following some basic software development principles.</p>
+
+<hr />
+
+<h3 id="starting-simple">Starting Simple</h3>
+
+<p>If we try to keep it as <a href="https://en.wikipedia.org/wiki/KISS_principle">simple</a> as possible we need to define a set of social media links by creating an unordered list using the <code class="highlighter-rouge">&lt;ul&gt;&lt;/ul&gt;</code> HTML tag. Inside that we add list items using <code class="highlighter-rouge">&lt;li&gt;&lt;/li&gt;</code> tag that will contain our link <code class="highlighter-rouge">&lt;a&gt;&lt;/a&gt;</code> tags.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"social-links"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://www.facebook.com/my-facebook-username"</span><span class="nt">&gt;</span>Facebook<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://plus.google.com/my-gplus-username"</span><span class="nt">&gt;</span>Google+<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://linkedin.com/in/my-linkedin-username"</span><span class="nt">&gt;</span>linkedin<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<hr />
+
+<h3 id="yaml-configuration">Yaml Configuration</h3>
+
+<p>The next step is to draw out the link and define it in a more parametric way. For that we need to define our variables for the links in the <code class="highlighter-rouge">_config.yml</code> file.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">facebook</span><span class="pi">:</span>     <span class="s2">"</span><span class="s">https://www.facebook.com/my-facebook-username"</span>
+<span class="na">google-plus</span><span class="pi">:</span>  <span class="s2">"</span><span class="s">https://plus.google.com/my-gplus-username"</span>
+<span class="na">linkedin</span><span class="pi">:</span>     <span class="s2">"</span><span class="s">https://linkedin.com/in/my-linkedin-username"</span></code></pre></figure>
+
+<p>Inside our HTML code we will make use of the of <a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers">liquid tags</a> to automatically fetch the above variables. Notice that the variables created in the <code class="highlighter-rouge">_config.yml</code> site can be accessed through the <code class="highlighter-rouge">site</code> variable.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"social-links"</span><span class="nt">&gt;</span>
+  {% if site.facebook %}
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.facebook }}"</span><span class="nt">&gt;</span>Facebook<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  {% endif %}
+  {% if site.google-plus %}
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.google-plus }}"</span><span class="nt">&gt;</span>Google+<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  {% endif %}
+  {% if site.linkedin %}
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.linkedin }}"</span><span class="nt">&gt;</span>Linkedin<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  {% endif %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<hr />
+
+<h3 id="dont-repeat-yourself">Don’t Repeat Yourself!</h3>
+
+<p>While the links are now defined a proper place (configuration file), the HTML code definitely has room for improvement by following the <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> principle . Instead of defining each link separately, we could group them together and have the code dynamically read and create the link for us. That will allow easier modifications in the future, such as adding or removing a link.</p>
+
+<p>The first step is to group the variables in the <code class="highlighter-rouge">_config.yml</code> file.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">social_links</span><span class="pi">:</span>
+  <span class="na">facebook</span><span class="pi">:</span>     <span class="s2">"</span><span class="s">https://www.facebook.com/my-facebook-username"</span>
+  <span class="na">google-plus</span><span class="pi">:</span>  <span class="s2">"</span><span class="s">https://plus.google.com/my-gplus-username"</span>
+  <span class="na">linkedin</span><span class="pi">:</span>     <span class="s2">"</span><span class="s">https://linkedin.com/in/my-linkedin-username"</span></code></pre></figure>
+
+<p>Using the above declaration each link is contained inside the <code class="highlighter-rouge">social_links</code> variable. We will use a <code class="highlighter-rouge">for</code> loop using liquid tags inside our HTML code to access each one of them.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"social-links"</span><span class="nt">&gt;</span>
+  {% for social_link in site.social_links %}
+    {% if social_link[1] != "" %}
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ social_link[1] }}"</span><span class="nt">&gt;</span>{{ social_link[0] }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    {% endif %}
+  {% endfor %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<p>Notice that the <code class="highlighter-rouge">social_links</code> variable is similar to a dictionary. Each link is defined by a <em>key-value</em> pair. The key is accessed by <code class="highlighter-rouge">social_link[0]</code> and the value by <code class="highlighter-rouge">social_link[1]</code>.</p>
+
+<hr />
+
+<h3 id="adding-the-awesome-fonts">Adding the Awesome Fonts</h3>
+
+<p>If you need to add icons to your links instead of text, you could use of course the font icons provided by <a href="http://fontawesome.io/icons/">Font Awesome</a>. Be sure to check them out, as their fonts are indeed awesome! Just include the link below in the webpage and you are ready to use the fonts.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<p>In order to intergrate properly with the font-awesome libraries, I defined the social links key variables by using the same name as the font-awesome css classes. For example, the icon I wanted to use for facebook has the class <code class="highlighter-rouge">fa-facebook</code>, and so the key for this link is defined using the word after <code class="highlighter-rouge">fa-</code>.</p>
+
+<p>The final code is found below. All that left is to add CSS styling and you are done!</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"social-links"</span><span class="nt">&gt;</span>
+  {% for social_link in site.social_links %}
+    {% if social_link[1] != "" %}
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ social_link[1] }}"</span> <span class="na">title=</span><span class="s">"{{ social_link[0] }}"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-{{ social_link[0] }}"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span>
+      <span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    {% endif %}
+  {% endfor %}
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<hr />
+
+<h3 id="any-ideas">Any ideas?</h3>
+
+<p>Of course there are numerous ways to implement the above scenario. This post examines an effective and simple way to tackle this case.</p>
+
+<p>Feel free to add your own ideas and thoughts in the comments section below!</p>
+
+<hr />
+
+  </div>
+
+  <div class="share-links">
+  <ul>
+    <li><a class="" href="https://facebook.com/sharer.php?u=http://localhost:4000/web-dev/jekyll/2017/07/01/social-media-links-jekyll/" rel="nofollow" target="_blank" title="Share on Facebook">
+      <i class="fa fa-facebook" aria-hidden="true"></i>
+    </a></li>
+    <li><a class="" href="https://plus.google.com/share?url=http://localhost:4000/web-dev/jekyll/2017/07/01/social-media-links-jekyll/" rel="nofollow" target="_blank" title="Share on Google+">
+      <i class="fa fa-google-plus" aria-hidden="true"></i>
+    </a></li>
+    <li><a class="" href="http://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/web-dev/jekyll/2017/07/01/social-media-links-jekyll/&title=How to build Social Media Links for Jekyll" rel="nofollow" target="_blank" title="Share on Linkedin">
+      <i class="fa fa-linkedin" aria-hidden="true"></i>
+    </a></li>
+    <li><a class="" href="https://twitter.com/intent/tweet?text=How to build Social Media Links for Jekyll&url=http://localhost:4000/web-dev/jekyll/2017/07/01/social-media-links-jekyll/" rel="nofollow" target="_blank" title="Share on Twitter">
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+    </a></li>
+    <li><a class="" href="http://www.reddit.com/submit?url=http://localhost:4000/web-dev/jekyll/2017/07/01/social-media-links-jekyll/&title=How to build Social Media Links for Jekyll" rel="nofollow" target="_blank" title="Share on Reddit">
+      <i class="fa fa-reddit-alien" aria-hidden="true"></i>
+    </a></li>
+    <li><a class="" href="http://pinterest.com/pin/create/button/?url=http://localhost:4000/web-dev/jekyll/2017/07/01/social-media-links-jekyll/&description=How to build Social Media Links for Jekyll" rel="nofollow" target="_blank" title="Share on Pinterest">
+      <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+    </a></li>
+    <li><a href="mailto:?subject=How to build Social Media Links for Jekyll&body=Hey! Please check this article out. It may be interesting for you. http://localhost:4000/web-dev/jekyll/2017/07/01/social-media-links-jekyll/" target="_blank" title="Share by e-mail" >
+      <i class="fa fa-envelope" aria-hidden="true"></i>
+    </a></li>
+  </ul>
+</div>
+
+
+  
+    
+  <div id="disqus_thread"></div>
+  <script>
+  /*
+    var disqus_config = function () {
+      this.page.url = 'http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/';
+      this.page.identifier = 'http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/';
+    };
+*/
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://vitamindev.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+  
+</article>
+
+
+              </div>
+            </main>
+          </div>
+        </div>
+
+        <div class="col-md-3 aside">
+          <div class="row">
+            <aside id="sidebar">
+
+              <section id="sidebar-top">
+  <div class="container-fluid">
+    <ul class="social-links">
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://www.facebook.com/ioannis.nikopoulos.3" title="facebook" class="social-icon">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a></li>
+        
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://plus.google.com/u/0/106093693797217007178" title="google-plus" class="social-icon">
+          <i class="fa fa-google-plus" aria-hidden="true"></i>
+        </a></li>
+        
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://www.linkedin.com/in/ioannisnikopoulos/" title="linkedin" class="social-icon">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a></li>
+        
+      
+        
+        <li><a rel="nofollow" target="_blank" href="https://github.com/Ioannis-Nikop" title="github" class="social-icon">
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </a></li>
+        
+      
+      <li><a rel="nofollow" target="_blank" href="/vitamin-dev/feed.xml" title="rss" class="social-icon">
+        <i class="fa fa-rss" aria-hidden="true"></i>
+      </a><li>
+    </ul>
+  </div>
+</section>
+
+
+              <section id="sidebar-about" class="sidebar-widget">
+  <div class="container-fluid">
+    <h3>About Author</h3>
+    <div class="row">
+      <div class="col-xs-4 col-md-12">
+        <img src="/assets/img/vitamin-dev/author_profile_photo.png" class="img-responsive img-circle" alt="About author photo">
+      </div>
+      <div class="col-xs-8 col-md-12">
+        <h4>Ioannis Nikopoulos</h4>
+        <p>Software Engineer & Application Development Analyst, capable to deliver high quality applications on time and on budget.</p>
+        <a href="mailto:ioannis.nikop@gmail.com">ioannis.nikop@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+              <section id="sidebar-archive" class="sidebar-widget">
+  <div class="container-fluid">
+    <h3>Blog Archive</h3>
+    
+      
+        
+            
+            <h4>2017</h4>
+            <ul>
+            
+        
+        <li><a href="/web-dev/jekyll/2017/07/01/social-media-links-jekyll/"><span>July 1</span> - How to build Social Media Links for Jekyll</a></li>
+      
+    
+      
+        
+        <li><a href="/design/2017/05/14/avoid-deployment-crisis/"><span>May 14</span> - How to avoid Deployment Crisis</a></li>
+      
+    
+      
+        
+        <li><a href="/general/2017/05/01/what-is-vitamindev/"><span>May 1</span> - What is VitaminDev?</a></li>
+      </ul>
+    
+  </div>
+</section>
+
+
+            </aside>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <span class="copyright">
+          <a class="page-link" href="/vitamin-dev/">VitaminDev</a>
+          © 2017. All rights reserved.
+        </span>
+      </div>
+      <div class="col-sm-6 text-center">
+        <span class="disclaimer">Blog powered by <a href="https://jekyllrb.com/">Jekyll</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- jQuery -->
+<script src="/assets/js/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+<!-- Search UI -->
+<script src="/assets/js/search/uisearch.js"></script>
+<script src="/assets/js/search/classie.js"></script>
+<script>
+  new UISearch( document.getElementById( 'sb-search' ) );
+</script>
+<!-- Functions -->
+<script src="/assets/js/functions.js"></script>
+
+
+  </body>
+
+</html>

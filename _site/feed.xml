@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/vitamin-dev/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/vitamin-dev/" rel="alternate" type="text/html" /><updated>2018-09-14T19:25:28+01:00</updated><id>http://localhost:4000/vitamin-dev/</id><title type="html">VitaminDev</title><author><name>Ioannis Nikopoulos</name></author><entry><title type="html">How to build Social Media Links for Jekyll</title><link href="http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/" rel="alternate" type="text/html" title="How to build Social Media Links for Jekyll" /><published>2017-07-01T10:00:00+01:00</published><updated>2017-07-01T10:00:00+01:00</updated><id>http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll</id><content type="html" xml:base="http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/">&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/2017-07-01-social-media-links-jekyll/social-links.png&quot; alt=&quot;social-links&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I always try to avoid hard coding during software development as it is usually ineffective and risks being highly counterproductive. In this post I will show you how to integrate social links for your website using Jekyll in a simple yet effective way, while avoiding hard coding and following some basic software development principles.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;starting-simple&quot;&gt;Starting Simple&lt;/h3&gt;
+
+&lt;p&gt;If we try to keep it as &lt;a href=&quot;https://en.wikipedia.org/wiki/KISS_principle&quot;&gt;simple&lt;/a&gt; as possible we need to define a set of social media links by creating an unordered list using the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;ul&amp;gt;&amp;lt;/ul&amp;gt;&lt;/code&gt; HTML tag. Inside that we add list items using &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;&lt;/code&gt; tag that will contain our link &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;social-links&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.facebook.com/my-facebook-username&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Facebook&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://plus.google.com/my-gplus-username&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Google+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://linkedin.com/in/my-linkedin-username&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;linkedin&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;yaml-configuration&quot;&gt;Yaml Configuration&lt;/h3&gt;
+
+&lt;p&gt;The next step is to draw out the link and define it in a more parametric way. For that we need to define our variables for the links in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://www.facebook.com/my-facebook-username&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;google-plus&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://plus.google.com/my-gplus-username&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;linkedin&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://linkedin.com/in/my-linkedin-username&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Inside our HTML code we will make use of the of &lt;a href=&quot;https://github.com/Shopify/liquid/wiki/Liquid-for-Designers&quot;&gt;liquid tags&lt;/a&gt; to automatically fetch the above variables. Notice that the variables created in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; site can be accessed through the &lt;code class=&quot;highlighter-rouge&quot;&gt;site&lt;/code&gt; variable.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;social-links&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% if site.facebook %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.facebook }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Facebook&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  {% endif %}
+  {% if site.google-plus %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.google-plus }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Google+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  {% endif %}
+  {% if site.linkedin %}
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ site.linkedin }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Linkedin&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+  {% endif %}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;dont-repeat-yourself&quot;&gt;Don’t Repeat Yourself!&lt;/h3&gt;
+
+&lt;p&gt;While the links are now defined a proper place (configuration file), the HTML code definitely has room for improvement by following the &lt;a href=&quot;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&quot;&gt;DRY&lt;/a&gt; principle . Instead of defining each link separately, we could group them together and have the code dynamically read and create the link for us. That will allow easier modifications in the future, such as adding or removing a link.&lt;/p&gt;
+
+&lt;p&gt;The first step is to group the variables in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;social_links&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://www.facebook.com/my-facebook-username&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;google-plus&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://plus.google.com/my-gplus-username&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;linkedin&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://linkedin.com/in/my-linkedin-username&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Using the above declaration each link is contained inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;social_links&lt;/code&gt; variable. We will use a &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loop using liquid tags inside our HTML code to access each one of them.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;social-links&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% for social_link in site.social_links %}
+    {% if social_link[1] != &quot;&quot; %}
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ social_link[1] }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;{{ social_link[0] }}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    {% endif %}
+  {% endfor %}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Notice that the &lt;code class=&quot;highlighter-rouge&quot;&gt;social_links&lt;/code&gt; variable is similar to a dictionary. Each link is defined by a &lt;em&gt;key-value&lt;/em&gt; pair. The key is accessed by &lt;code class=&quot;highlighter-rouge&quot;&gt;social_link[0]&lt;/code&gt; and the value by &lt;code class=&quot;highlighter-rouge&quot;&gt;social_link[1]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;adding-the-awesome-fonts&quot;&gt;Adding the Awesome Fonts&lt;/h3&gt;
+
+&lt;p&gt;If you need to add icons to your links instead of text, you could use of course the font icons provided by &lt;a href=&quot;http://fontawesome.io/icons/&quot;&gt;Font Awesome&lt;/a&gt;. Be sure to check them out, as their fonts are indeed awesome! Just include the link below in the webpage and you are ready to use the fonts.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In order to intergrate properly with the font-awesome libraries, I defined the social links key variables by using the same name as the font-awesome css classes. For example, the icon I wanted to use for facebook has the class &lt;code class=&quot;highlighter-rouge&quot;&gt;fa-facebook&lt;/code&gt;, and so the key for this link is defined using the word after &lt;code class=&quot;highlighter-rouge&quot;&gt;fa-&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The final code is found below. All that left is to add CSS styling and you are done!&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;social-links&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% for social_link in site.social_links %}
+    {% if social_link[1] != &quot;&quot; %}
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ social_link[1] }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{{ social_link[0] }}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-{{ social_link[0] }}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;aria-hidden=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    {% endif %}
+  {% endfor %}
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;any-ideas&quot;&gt;Any ideas?&lt;/h3&gt;
+
+&lt;p&gt;Of course there are numerous ways to implement the above scenario. This post examines an effective and simple way to tackle this case.&lt;/p&gt;
+
+&lt;p&gt;Feel free to add your own ideas and thoughts in the comments section below!&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Ioannis Nikopoulos</name></author><summary type="html">In this post I will show you how to integrate social links using Jekyll in a simple yet effective way..</summary></entry><entry><title type="html">How to avoid Deployment Crisis</title><link href="http://localhost:4000/vitamin-dev/design/2017/05/14/avoid-deployment-crisis/" rel="alternate" type="text/html" title="How to avoid Deployment Crisis" /><published>2017-05-14T10:08:43+01:00</published><updated>2017-05-14T10:08:43+01:00</updated><id>http://localhost:4000/vitamin-dev/design/2017/05/14/avoid-deployment-crisis</id><content type="html" xml:base="http://localhost:4000/vitamin-dev/design/2017/05/14/avoid-deployment-crisis/">&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/2017-05-14-avoid-deployment-crisis/design.jpg&quot; alt=&quot;design&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Let’s say we are in the middle of a project about adding a new water supply line to a house. For this project there two groups working, one installing the new pipes outside, and the other one adding a new facet inside the house. The project will be considered a success when the user opens the facet and clear fresh water flows from it. The project’s management team has decided that the two groups will be working in parallel and that all parts’ deployment will take place at the same time.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;what-if-the-deployment-fails&quot;&gt;What if the deployment fails?&lt;/h3&gt;
+
+&lt;p&gt;Imagine you are part of the ‘inside’ team (the one adding the facet inside the house) working on the design of the project within your scope. The project manager approaches you and demands that you have fallback actions available, in case the deployment of the other team fails and the management team decides to fallback with the project’s deployment. As a manager, you wouldn’t want your client to open the facet and see mud coming from it, would you?&lt;/p&gt;
+
+&lt;p&gt;What would you do then to handle this crisis scenario? The &lt;em&gt;backup&lt;/em&gt; option is not available in this case. Obviously removing every change done and restoring everything in their initial state would be cost- and time-consuming, probably leading the team working overtimes late at night. A simple and efficient solution would be of course to add a valve inside the house where you can turn off the new water supply, depending on the status of the ‘outside’ parts of the project, while leaving all the ‘inside’ parts ready to use after successfully deploying them.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;from-plumber-to-software-engineer&quot;&gt;From Plumber to Software Engineer…&lt;/h3&gt;
+
+&lt;p&gt;Now let’s leave the plumbing systems to the plumbers and apply this case on an IT project. Again we have two separate delivery units working on a new functionality that needs to be added in the existing processes. To simplify things, your team handles the ‘inside’ systems, with which the users are working and the ‘outside’ team is responsible for the web services that draw data from the internet and provide them to the ‘inside’ part.&lt;/p&gt;
+
+&lt;h4 id=&quot;requirements&quot;&gt;Requirements&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The process must work seamlessly and cannot be interrupted by system errors. System errors are not tolerated, as they lead to financial loss to the company itself.&lt;/li&gt;
+  &lt;li&gt;If anything goes wrong during the deployment, then the user’s work should not be affected in any case while using the existing process. It should be like the new functionality was never added.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;drawbacks&quot;&gt;Drawbacks&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The deployment time window is very small and clearly not enough to handle rollback actions.&lt;/li&gt;
+  &lt;li&gt;Having people working overtimes to rollback changes is to be avoided for many reasons (e.g. costs).&lt;/li&gt;
+  &lt;li&gt;There is no system configuration options available to support you. There is only your code and database tables.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To find out if the ‘valve’ option works for this case we must dive deeper into the design of the process and ask the following question:
+&lt;em&gt;How the new functionality is introduced to the existing process?&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;the-integration-point&quot;&gt;The integration point&lt;/h3&gt;
+
+&lt;p&gt;In the following diagram we have pinpointed the spot (A) where the new functionality is to be added.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/2017-05-14-avoid-deployment-crisis/diag-2.jpg&quot; alt=&quot;diagram 2&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The necessary implementations include modifying an existing main program by introducing a new piece of code. The quick and dirty way would be to go with injecting the new code inside the existing program.&lt;/p&gt;
+
+&lt;p&gt;What I would consider as a better practice, is to use a more modular approach like the following.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/2017-05-14-avoid-deployment-crisis/diag-3.jpg&quot; alt=&quot;diagram 3&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In this case we add all the new functionality outside of the existing program in a separate module (another program or function module) adding in the existing program only the necessary call to this module. The spot that needs to be changed in the existing program in order to call our new functionality would be the &lt;strong&gt;integration point&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;decision-making&quot;&gt;Decision Making&lt;/h4&gt;
+
+&lt;p&gt;Now that it is clear what the integration point is, it’s time to add a &lt;em&gt;valve&lt;/em&gt;, meaning an on-off switch for the new functionality.&lt;/p&gt;
+
+&lt;p&gt;We will define this switch in very simple way using a configuration table like the following:&lt;/p&gt;
+
+&lt;table class=&quot;table table-bordered&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Process ID&lt;/th&gt;
+      &lt;th&gt;Process Name&lt;/th&gt;
+      &lt;th&gt;Active&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;01&lt;/td&gt;
+      &lt;td&gt;New Process Description&lt;/td&gt;
+      &lt;td&gt;X&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Obviously the &lt;em&gt;Active&lt;/em&gt; column of the configuration table defines whether the new functionality is to be executed or not.&lt;/p&gt;
+
+&lt;p&gt;With the configuration ready, we need to decide where to add the query to the configuration table.&lt;/p&gt;
+
+&lt;p&gt;One way would be to add the query inside the main program like so.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/2017-05-14-avoid-deployment-crisis/diag-4.jpg&quot; alt=&quot;diagram 4&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With this approach we let the program do the decision making whether to call the new mechanism or not. This would suit a scenario where we would have multiple programs that need to call the new mechanism but only some of them would need to be affected by the configuration.&lt;/p&gt;
+
+&lt;p&gt;In order to make the configuration affect the execution of the new mechanism globally, we would need to add the decision making inside the new module.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/2017-05-14-avoid-deployment-crisis/diag-5.jpg&quot; alt=&quot;diagram 5&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Based on this design, the existing program is only able to call the new mechanism, and handle the return of results. If we proceed with this approach, we need to make the implementations in such a way where when the new process is found inactive, the existing program will continue its flow like normal.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;turn-off-the-switch-in-case-of-an-emergency&quot;&gt;Turn off the switch in case of an emergency!&lt;/h3&gt;
+
+&lt;p&gt;To sum up, we defined a killer on-off switch for our new process. In the crisis scenario when the deployment of the other team goes wrong and the management decides to fallback, all we have to do is change the configuration table and deactivate the new process; just like using a valve under our sink in the bathroom!&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Ioannis Nikopoulos</name></author><summary type="html">Let’s say we are in the middle of a project about adding a new water supply line to a house.</summary></entry><entry><title type="html">What is VitaminDev?</title><link href="http://localhost:4000/vitamin-dev/general/2017/05/01/what-is-vitamindev/" rel="alternate" type="text/html" title="What is VitaminDev?" /><published>2017-05-01T07:43:00+01:00</published><updated>2017-05-01T07:43:00+01:00</updated><id>http://localhost:4000/vitamin-dev/general/2017/05/01/what-is-vitamindev</id><content type="html" xml:base="http://localhost:4000/vitamin-dev/general/2017/05/01/what-is-vitamindev/">&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/2017-05-01-what-is-vitamindev/wordcloud.png&quot; alt=&quot;clean-code&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;First post and we need to break the ice. So, let’s start by introducing myself and this blog.&lt;/p&gt;
+
+&lt;p&gt;My name is &lt;strong&gt;Ioannis Nikopoulos&lt;/strong&gt; (my friends call me John and so should you) and I am an experienced Software Engineer with strong professional background in SAP custom development (ABAP language). Despite the language or the system I am working on, there are some principles I always follow and they are all about clean code. I believe in writing clean, well-organized and well-documented code that is simple enough, does what it should, solve the problem it is supposed to and is maintainable. &lt;strong&gt;Clean code&lt;/strong&gt; is highly beneficial, especially in the corporate context where problems are easily escalated and need complex solutions. “Quick and dirty” code cannot align with complexity, while best practices and methodical approaches seem to be the winner.&lt;/p&gt;
+
+&lt;p&gt;So, this is how &lt;strong&gt;VitaminDev&lt;/strong&gt; was born. It is a blog that gathers and explains coding principles and best practices across different languages and technologies. Each post will be dedicated on solving a development, technical or programming problem by comparing alternative solutions (if any) and suggesting the best one I have found, with the appropriate documentation. Of course, it would be also great if you shared your thoughts with me and suggested your own solutions.&lt;/p&gt;
+
+&lt;p&gt;Many of the &lt;strong&gt;“problems”&lt;/strong&gt; I will be talking about come from my own experience, either from work or my personal developments. I am working on improving my personal and professional skills, and I would like to share my journey with you. I take online lessons, I build this blog (almost) from scratch, read technical books and do personal small or medium development projects. I am still gathering everything, but feel free to visit my courses page or my github profile to see what I am up to.&lt;/p&gt;
+
+&lt;p&gt;Before you ask, if this blog is for you, let me tell you this. If you are also passionate about learning the &lt;strong&gt;best coding&lt;/strong&gt; and &lt;strong&gt;development practices&lt;/strong&gt; and how to apply them in your personal or work projects, stay tuned and even share your thoughts and questions. Join me in my exploration journey and let’s become together (even) better software engineers.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;vitamindev-is-our-vitamin-for-healthy-development&quot;&gt;&lt;em&gt;VitaminDev is our vitamin for healthy development!&lt;/em&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;</content><author><name>Ioannis Nikopoulos</name></author><summary type="html">First post and we need to break the ice. So, let’s start by introducing myself and this blog.</summary></entry></feed>
