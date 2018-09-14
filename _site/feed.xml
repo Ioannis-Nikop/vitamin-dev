@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/vitamin-dev/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/vitamin-dev/" rel="alternate" type="text/html" /><updated>2018-09-14T19:25:28+01:00</updated><id>http://localhost:4000/vitamin-dev/</id><title type="html">VitaminDev</title><author><name>Ioannis Nikopoulos</name></author><entry><title type="html">How to build Social Media Links for Jekyll</title><link href="http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/" rel="alternate" type="text/html" title="How to build Social Media Links for Jekyll" /><published>2017-07-01T10:00:00+01:00</published><updated>2017-07-01T10:00:00+01:00</updated><id>http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll</id><content type="html" xml:base="http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/vitamin-dev/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/vitamin-dev/" rel="alternate" type="text/html" /><updated>2018-09-14T20:08:09+01:00</updated><id>http://localhost:4000/vitamin-dev/</id><title type="html">VitaminDev</title><author><name>Ioannis Nikopoulos</name></author><entry><title type="html">How to build Social Media Links for Jekyll</title><link href="http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/" rel="alternate" type="text/html" title="How to build Social Media Links for Jekyll" /><published>2017-07-01T10:00:00+01:00</published><updated>2017-07-01T10:00:00+01:00</updated><id>http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll</id><content type="html" xml:base="http://localhost:4000/vitamin-dev/web-dev/jekyll/2017/07/01/social-media-links-jekyll/">&lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/2017-07-01-social-media-links-jekyll/social-links.png&quot; alt=&quot;social-links&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/vitamin-dev/assets/img/2017-07-01-social-media-links-jekyll/social-links.png&quot; alt=&quot;social-links&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -99,7 +99,7 @@
 
 &lt;hr /&gt;</content><author><name>Ioannis Nikopoulos</name></author><summary type="html">In this post I will show you how to integrate social links using Jekyll in a simple yet effective way..</summary></entry><entry><title type="html">How to avoid Deployment Crisis</title><link href="http://localhost:4000/vitamin-dev/design/2017/05/14/avoid-deployment-crisis/" rel="alternate" type="text/html" title="How to avoid Deployment Crisis" /><published>2017-05-14T10:08:43+01:00</published><updated>2017-05-14T10:08:43+01:00</updated><id>http://localhost:4000/vitamin-dev/design/2017/05/14/avoid-deployment-crisis</id><content type="html" xml:base="http://localhost:4000/vitamin-dev/design/2017/05/14/avoid-deployment-crisis/">&lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/2017-05-14-avoid-deployment-crisis/design.jpg&quot; alt=&quot;design&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/vitamin-dev/assets/img/2017-05-14-avoid-deployment-crisis/design.jpg&quot; alt=&quot;design&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -202,7 +202,7 @@
 
 &lt;hr /&gt;</content><author><name>Ioannis Nikopoulos</name></author><summary type="html">Let’s say we are in the middle of a project about adding a new water supply line to a house.</summary></entry><entry><title type="html">What is VitaminDev?</title><link href="http://localhost:4000/vitamin-dev/general/2017/05/01/what-is-vitamindev/" rel="alternate" type="text/html" title="What is VitaminDev?" /><published>2017-05-01T07:43:00+01:00</published><updated>2017-05-01T07:43:00+01:00</updated><id>http://localhost:4000/vitamin-dev/general/2017/05/01/what-is-vitamindev</id><content type="html" xml:base="http://localhost:4000/vitamin-dev/general/2017/05/01/what-is-vitamindev/">&lt;hr /&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/2017-05-01-what-is-vitamindev/wordcloud.png&quot; alt=&quot;clean-code&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/vitamin-dev/assets/img/2017-05-01-what-is-vitamindev/wordcloud.png&quot; alt=&quot;clean-code&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 

@@ -23,14 +23,14 @@ copyright-date: 2017
 repository: "Ioannis-Nikop/vitamin-dev"
 
 # url: "http://www.vitamindev.com/"
-# baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: /vitamin-dev # the subpath of your site, e.g. /blog
 
 # Comments
 disqus:
   shortname: vitamindev
 
 # Images
-image-path: /vitamin-dev/assets/img
+image-path: /assets/img
 author-image: author_profile_photo.png
 about-me-image: about_me_photo.png
 

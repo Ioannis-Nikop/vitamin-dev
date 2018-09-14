@@ -11,7 +11,7 @@ excerpt: Let’s say we are in the middle of a project about adding a new water 
 
 ***
 
-![design]({{ site.image-path }}/{{ page.image-folder }}/design.jpg){:class="img-responsive"}
+![design]({{ site.image-path | relative_url }}/{{ page.image-folder }}/design.jpg){:class="img-responsive"}
 
 ***
 

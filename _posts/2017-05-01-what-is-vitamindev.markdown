@@ -11,7 +11,7 @@ excerpt: First post and we need to break the ice. So, let’s start by introduci
 
 ***
 
-![clean-code]({{ site.image-path }}/{{ page.image-folder }}/wordcloud.png){:class="img-responsive"}
+![clean-code]({{ site.image-path | relative_url }}/{{ page.image-folder }}/wordcloud.png){:class="img-responsive"}
 
 ***
 

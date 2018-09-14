@@ -11,7 +11,7 @@ excerpt: In this post I will show you how to integrate social links using Jekyll
 
 ***
 
-![social-links]({{ site.image-path }}/{{ page.image-folder }}/social-links.png){:class="img-responsive"}
+![social-links]({{ site.image-path | relative_url }}/{{ page.image-folder }}/social-links.png){:class="img-responsive"}
 
 ***
 

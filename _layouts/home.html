@@ -11,7 +11,7 @@ layout: default
       {% for post in paginator.posts %}
         <div class="col-sm-6">
           <div class="home-post thumbnail">
-            <div class="featured-image" style="background-image:url({{ site.image-path }}{{ post.image-folder | relative_url }}{{ post.featured-image | relative_url }})">
+            <div class="featured-image" style="background-image:url({{ site.image-path | relative_url }}/{{ post.image-folder }}/{{ post.featured-image }})">
             </div>
             <div class="caption clearfix">
               {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
