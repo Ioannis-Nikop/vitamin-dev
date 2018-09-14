@@ -3,7 +3,7 @@
   <div class=" container-fluid">
     <div class="latest-posts">
       <span >What's New?&nbsp</span>
-      <a href="{{ latest_post.url | relative_url }}">{{ latest_post.title | escape }}</a>
+      <a href="{{ latest_post.url | relative_url }}">{{ latest_post.title | escape_once }}</a>
     </div>
   </div>
 </section>

@@ -20,6 +20,8 @@ email: ioannis.nikop@gmail.com
 author-desc: Software Engineer & Application Development Analyst, capable to deliver high quality applications on time and on budget.
 copyright-date: 2017
 
+repository: "Ioannis-Nikop/vitamin-dev"
+
 # url: "http://www.vitamindev.com/"
 # baseurl: "" # the subpath of your site, e.g. /blog
 
@@ -43,7 +45,7 @@ social_links:
 markdown: kramdown
 permalink: pretty
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-paginate
 exclude:
