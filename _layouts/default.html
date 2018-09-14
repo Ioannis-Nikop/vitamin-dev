@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div id="main-container" class="container">
+      <div class="row">
+
+        <div class="col-md-9 main">
+          <div class="row">
+
+            {% include latest-post.html %}
+              
+            <main id="content-main" class="page-content" aria-label="Content">
+              <div class="container-fluid">
+
+              {{ content }}
+
+              </div>
+            </main>
+          </div>
+        </div>
+
+        <div class="col-md-3 aside">
+          <div class="row">
+            <aside id="sidebar">
+
+              {% include social-links.html %}
+
+              {% include about-author.html %}
+
+              {% include blog-archive.html %}
+
+            </aside>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+
+  </body>
+
+</html>

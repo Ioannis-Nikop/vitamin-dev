@@ -1,0 +1,16 @@
+<section id="sidebar-archive" class="sidebar-widget">
+  <div class="container-fluid">
+    <h3>Blog Archive</h3>
+    {% for post in site.posts %}
+      {% assign currentDate = post.date | date: "%Y" %}
+        {% if currentDate != myDate %}
+            {% unless forloop.first %}</ul>{% endunless %}
+            <h4>{{ currentDate }}</h4>
+            <ul>
+            {% assign myDate = currentDate %}
+        {% endif %}
+        <li><a href="{{ post.url }}"><span>{{ post.date | date: "%B %-d" }}</span> - {{ post.title }}</a></li>
+      {% if forloop.last %}</ul>{% endif %}
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,15 @@
+<section id="sidebar-about" class="sidebar-widget">
+  <div class="container-fluid">
+    <h3>About Author</h3>
+    <div class="row">
+      <div class="col-xs-4 col-md-12">
+        <img src="{{ site.image-path }}{{ site.author-image | relative_url }}" class="img-responsive img-circle" alt="About author photo">
+      </div>
+      <div class="col-xs-8 col-md-12">
+        <h4>{{ site.author }}</h4>
+        <p>{{ site.author-desc }}</p>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+    </div>
+  </div>
+</section>

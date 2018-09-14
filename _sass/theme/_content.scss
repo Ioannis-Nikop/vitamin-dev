@@ -1,0 +1,105 @@
+/**
+ * Content
+ */
+.main {
+  background-color: $background-color-light;
+  border-right: 1px solid #E0E0E0;
+  min-height: 800px;
+}
+
+#main-container {
+  background-color: $main-container-bg;
+  margin-top: -($content-top-size);
+  margin-bottom: $content-top-size / 2 ;
+  @include box-shadow(0 0px 0 #FFF, 0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+#content-top {
+  border-bottom: 1px solid $content-border-color;
+  @media (min-width: $screen-md-min) {
+    height: $content-top-size;
+  }
+}
+
+.latest-posts {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  color: $grey-color;
+  font-size: $font-size-h4;
+  display: block;
+}
+
+.home-post {
+  margin-top: $spacing-unit;
+  padding-bottom: $spacing-unit / 2;
+  color: $gray-light;
+  background-color: rgba(255, 255, 255, 0.40);
+  @include box-shadow(0px 2px 2px 0px rgba(0,0,0,0.125));
+  .btn {
+    margin-top: $spacing-unit / 2;
+  }
+  .featured-image{
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.post{
+  padding: 0;
+  @media (min-width: $screen-xs-min) {
+    padding: $spacing-unit / 2;
+  }
+}
+
+.about-me-photo{
+  background: none;
+  img {
+    @include box-shadow(0px 2px 2px 0px rgba(0,0,0,0.125));
+  }
+}
+
+.post-content {
+  p {
+    padding-top: $spacing-unit / 4;
+    padding-bottom: $spacing-unit / 4;
+  }
+  img {
+    @include box-shadow(0 0px 0 #FFF, 0 1px 1px rgba(0, 0, 0, 0.1));
+  }
+}
+
+.share-links {
+  height: $content-top-size;
+  font-size: $font-size-h3;
+  padding-bottom: $spacing-unit * 2;
+  ul {
+    @media (min-width: 320px) {
+      text-align: justify;
+    }
+    @media (min-width: $screen-xs-min) {
+      text-align: right;
+    }
+    padding: 0;
+    margin: 0 auto;
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+    &:before {
+      content: '';
+      display: block;
+    }
+    li {
+      list-style: none;
+      display: inline-block;
+      position: relative;
+      @media (min-width: $screen-xs-min) {
+        margin-left: 20px;
+      }
+    }
+  }
+}

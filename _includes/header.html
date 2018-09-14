@@ -1,0 +1,47 @@
+<header class="site-header" role="banner">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div id="navbar-container" class="container">
+      <!-- Menu Icon - Collapsed Menu -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar-menu-top" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- Menu Items -->
+      {% assign default_paths = site.pages | map: "path" %}
+      {% assign page_paths = site.header_pages | default: default_paths %}
+      <div class="collapse navbar-collapse" id="navbar-menu-top">
+        <ul class="nav navbar-nav">
+          <li><a class="page-link" href="{{ "/" | relative_url }}">Home</a></li>
+          {% if page_paths %}
+            {% for path in page_paths %}
+              {% assign my_page = site.pages | where: "path", path | first %}
+                {% if my_page.title %}
+                <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+                {% endif %}
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+      <div id="sb-search" class="sb-search">
+        <form action="/search/" method="get" autocomplete="off">
+          <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="query" id="search">
+          <input class="sb-search-submit" type="submit" value="">
+          <span class="sb-icon-search"></span>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Header Banner -->
+  <div class="jumbotron header-banner">
+    <div class="container">
+      <h1 class="code-icon"><i class="fa fa-code" aria-hidden="true"></i></h1>
+      <h1 class="site-title">{{ site.title | escape }}</h1>
+      <p>{{ site.subtitle | escape }}</p>
+    </div>
+  </div>
+</header>

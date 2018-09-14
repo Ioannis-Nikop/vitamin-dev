@@ -1,0 +1,148 @@
+/**
+ * Search
+ */
+
+ /* Search icon by IcoMoon, made with http://icomoon.io/app/ */
+ @font-face {
+ 	font-family: 'icomoon';
+ 	src:url('/assets/fonts/icomoon/icomoon.eot');
+ 	src:url('/assets/fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+ 		  url('/assets/fonts/icomoon/icomoon.woff') format('woff'),
+ 		  url('/assets/fonts/icomoon/icomoon.ttf') format('truetype'),
+ 		  url('/assets/fonts/icomoon/icomoon.svg#icomoon') format('svg');
+ 	font-weight: normal;
+ 	font-style: normal;
+ }
+
+ #search-results {
+   padding-left: 0;
+   padding-top: $spacing-unit / 2;
+   li {
+    list-style: none;
+   }
+ }
+
+.sb-search {
+	position: absolute;
+  top: 0;
+  right: 0;
+	width: 0%;
+	min-width: 50px;
+	height: 50px;
+	overflow: hidden;
+
+	-webkit-transition: width 0.3s;
+	-moz-transition: width 0.3s;
+	transition: width 0.3s;
+
+	-webkit-backface-visibility: hidden;
+}
+
+.sb-search-input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	outline: none;
+	background: $navbar-bg-color;
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	z-index: 10;
+	padding: 20px 65px 20px 20px;
+	color: #fff;
+}
+
+input[type="search"].sb-search-input {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+.sb-search-input::-webkit-input-placeholder {
+	color: $grey-color;
+}
+.sb-search-input:-moz-placeholder {
+	color: $grey-color;
+}
+.sb-search-input::-moz-placeholder {
+	color: $grey-color;
+}
+.sb-search-input:-ms-input-placeholder {
+	color: $grey-color;
+}
+
+.sb-icon-search,
+.sb-search-submit  {
+	width: 50px;
+	height: 50px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+  &:hover,
+  &:focus {
+    background: $navbar-default-link-hover-bg;
+  }
+}
+
+.sb-search-submit {
+	background: $navbar-bg-color; /* IE needs this */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+  filter: alpha(opacity=0); /* IE 5-7 */
+  opacity: 0;
+	color: transparent;
+	border: none;
+	outline: none;
+	z-index: -1;
+}
+
+.sb-icon-search {
+	color: #fff;
+	background: $navbar-bg-color;
+	z-index: 90;
+	font-size: $font-size-large;
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+  &:hover,
+  &:focus {
+    background: $navbar-default-link-hover-bg;
+  }
+}
+
+.sb-icon-search:before {
+	content: "\e000";
+}
+
+.sb-search.sb-search-open,
+.no-js .sb-search {
+	width: 100%;
+  @media (min-width: $screen-xs-min) {
+    width: 50%;
+  }
+}
+
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search {
+	background: $navbar-bg-color;
+	color: #fff;
+	z-index: 11;
+}
+
+.sb-search.sb-search-open .sb-search-submit,
+.no-js .sb-search .sb-search-submit {
+	z-index: 90;
+}
